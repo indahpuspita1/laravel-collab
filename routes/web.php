@@ -22,14 +22,14 @@ Route::get('/', [WelcomeController::class, 'index']);
 // oute::put('/products/{id}', [ProductController::class, 'update']);
 // Route::delete('/products/{id}', [ProductController::class, 'destroy']);
 
+Route::get('/{any}', function () {
+    return view('App');
+})->where('any', '.*');
 
 Route::get('/react', function () {
     return view('react');
 });
 
-Route::get('/{any}', function () {
-    return view('App');
-})->where('any', '.*');
 
 //Route::get('/', function () {
 //    return view('welcome');
